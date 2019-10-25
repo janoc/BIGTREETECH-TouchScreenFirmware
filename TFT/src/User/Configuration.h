@@ -18,19 +18,19 @@
 #define FAN_ID           {"Fan0",    "Fan1",    "Fan2",    "Fan3",    "Fan4",    "Fan5"}
 #define FAN_CMD          {"M106 P0", "M106 P1", "M106 P2", "M106 P3", "M106 P4", "M106 P5" };
 
-#define DEFAULT_SPEED_MOVE      3000  //Move default speed  mm/min
+#define DEFAULT_SPEED_MOVE      3000 //Move default speed  mm/min
 
 #define EXTRUDE_SLOW_SPEED      60   //Extrude speed  mm/min
 #define EXTRUDE_NORMAL_SPEED    600  //
 #define EXTRUDE_FAST_SPEED      1200 //
 
 //size of machine
-#define X_MIN_POS 0
-#define Y_MIN_POS 0
+#define X_MIN_POS -100
+#define Y_MIN_POS -100
 #define Z_MIN_POS 0
-#define X_MAX_POS 235
-#define Y_MAX_POS 235
-#define Z_MAX_POS 300
+#define X_MAX_POS 100
+#define Y_MAX_POS 100
+#define Z_MAX_POS 220
 
 //Specify a Pause position as { X, Y, Z_raise }
 #define NOZZLE_PAUSE_RETRACT_LENGTH 15   // (mm)
@@ -60,7 +60,7 @@
 
 //Power Supply
 #define PS_ON_ACTIVE_HIGH    true   // Set 'false' for ATX (1), 'true' for X-Box (2)
-  
+
 //Filament run out detect
 #define FIL_RUNOUT_INVERTING true  // Set to false to invert the logic of the sensor.
 #define FIL_NOISE_THRESHOLD  5     // 5*10 = 50ms,  Pause print when filament runout is detected for 50ms.
@@ -76,7 +76,8 @@
 #define SHOW_BTT_BOOTSCREEN
 
 // Text displayed at the top of the LCD in 12864 mode
-#define ST7920_BANNER_TEXT "LCD12864 Simulator"
+//#define ST7920_BANNER_TEXT "LCD12864 Simulator"
+#define ST7920_BANNER_TEXT ""
 
 // Make the simulator run fullscreen, Not recommended for TFT24
 //#define ST7920_FULLSCREEN
@@ -85,7 +86,7 @@
 #define ONBOARD_SD_SUPPORT
 #ifdef ONBOARD_SD_SUPPORT
   #define M27_AUTOREPORT                      // Disable the M27 polling if you enable enable Marlin AUTO_REPORT_SD_STATUS
-  #define M27_REFRESH                 3       // Time in sec for M27 command 
+  #define M27_REFRESH                 3       // Time in sec for M27 command
   #define M27_WATCH_OTHER_SOURCES    true     // if true the polling on M27 report is always active. Case: SD print start not from TFT35
 #endif
 
@@ -95,5 +96,5 @@
  * This function is suitable for Delta Printer.
  */
 //#define HOME_BEFORE_PLR
-  
+
 #endif
